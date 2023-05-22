@@ -1,0 +1,11 @@
+<div class="sidebar-container">
+  <p-sidebar [(visible)]="sidebarVisible">
+    <a
+      [routerLink]="['/promoCode']"
+      class="flex gap-4 items-center cursor-pointer hover:bg-primary-dark hover:text-white py-3 px-3"
+    >
+      <i class="pi pi-ticket"></i><span>Promo Code</span>
+    </a>
+  </p-sidebar>
+  <p-button (click)="sidebarVisible = true" icon="pi pi-th-large"></p-button>
+</div>

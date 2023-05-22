@@ -1,0 +1,62 @@
+<nav
+  class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-primary-dark mb-3"
+>
+  <div
+    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+  >
+    <div
+      class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
+    >
+      <div class="flex gap-10">
+        <div><app-side-navbar></app-side-navbar></div>
+
+        <img
+          class="h-10 w-20"
+          src="./../../../../assets/images/afm-logo-232327E69E-seeklogo.com.png"
+          alt="logo"
+        />
+      </div>
+      <button
+        class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        type="button"
+        (click)="toggleNavbar()"
+      >
+        <i style="font-size: 1.5rem" class="pi pi-bars"></i>
+      </button>
+    </div>
+    <hr />
+    <div
+      [ngClass]="{
+        hidden: !showMenu,
+        flex: showMenu,
+        'mt-6': showMenu,
+      }"
+      class="lg:flex lg:flex-grow items-center"
+    >
+      <ul class="flex flex-col items-center lg:flex-row list-none ml-auto">
+        <li class="nav-item">
+          <a
+            class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+            href="#pablo"
+          >
+            <i
+              class="fab fa-facebook-square text-lg leading-lg text-white opacity-75"
+            ></i
+            ><span class="ml-2">SignOut</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+            href="#pablo"
+          >
+            <i
+              class="fab fa-twitter text-lg leading-lg text-white opacity-75"
+            ></i
+            ><span class="ml-2"><i class="pi pi-user"></i> My Account</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

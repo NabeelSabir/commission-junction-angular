@@ -1,0 +1,120 @@
+<!-- use when data coming from the server -->
+
+<!-- <section>
+  <div class="card">
+    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Promo Code</th>
+          <th>Description</th>
+          <th>Created By</th>
+          <th>Created Date</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>yza45jysa</td>
+          <td>Fake promo code</td>
+          <td>Emma</td>
+          <td>4/5/2023</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</section> -->
+
+<app-top-navbar></app-top-navbar>
+<section>
+  <div class="float-right px-5 py-2">
+    <p-button
+      (click)="showDialog()"
+      icon="pi pi-external-link"
+      label="Genrate Promo"
+    ></p-button>
+  </div>
+  <div class="px-5">
+    <table id="customers">
+      <tr>
+        <th>Promo Code</th>
+        <th>Description</th>
+        <th>Created By</th>
+        <th>Created Date</th>
+      </tr>
+      <tr>
+        <td>yza45jysa</td>
+        <td>Fake promo code</td>
+        <td>Emma</td>
+        <td>4/5/2023</td>
+      </tr>
+      <tr>
+        <td>yza45jysa</td>
+        <td>Fake promo code</td>
+        <td>Emma</td>
+        <td>4/5/2023</td>
+      </tr>
+      <tr>
+        <td>yza45jysa</td>
+        <td>Fake promo code</td>
+        <td>Emma</td>
+        <td>4/5/2023</td>
+      </tr>
+      <tr>
+        <td>yza45jysa</td>
+        <td>Fake promo code</td>
+        <td>Emma</td>
+        <td>4/5/2023</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<p-dialog
+  header="Genrate Promo"
+  [draggable]="false"
+  [(visible)]="visible"
+  [style]="{ width: '50vw' }"
+>
+  <form
+    class="space-y-4 md:space-y-6"
+    [formGroup]="genratePromo"
+    (ngSubmit)="onSubmit()"
+  >
+    <div>
+      <label
+        for="password"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Promo Code</label
+      >
+      <input
+        type="text"
+        name="promoCode"
+        id="promoCode"
+        placeholder="xyv267mkjyt"
+        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        formControlName="promoCode"
+      />
+    </div>
+    <div>
+      <label
+        for="description"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Description</label
+      >
+      <input
+        type="text"
+        name="description"
+        id="description"
+        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="description here"
+        formControlName="description"
+      />
+    </div>
+    <button
+      type="submit"
+      class="w-full text-white bg-primary hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor:pointer"
+      [disabled]="genratePromo.invalid"
+    >
+      Sign in
+    </button>
+  </form>
+</p-dialog>
